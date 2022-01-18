@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>MySQL知识点——LEFT JOIN | Zahi的小窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="left join on 即左连接，把left join左边的表的记录全部找出来，即使右边的表没有记录。 A LEFT JOIN B ON 条件表达式: ON 条件用来决定如何从 B 表中检索数据行。 如果 B 表中没有任何一行数据匹配 ON 的条件,将会额外生成一行所有列为 NULL 的数据。 在匹配阶段 WHERE 子句的条件都不会被使用。仅在匹配阶段完成以后，WHERE 子句条件才会被使用。">
+  <meta name="description" content="left join on 即左连接，把left join左边的表的记录全部找出来，即使右边的表没有记录。 A LEFT JOIN B ON 条件表达式: ON 条件用来决定如何从 B 表中检索数据行。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL知识点——LEFT JOIN">
 <meta property="og:url" content="http://yoursite.com/2019/11/25/MySQL%E7%9F%A5%E8%AF%86%E7%82%B9%E2%80%94%E2%80%94LEFT-JOIN/index.html">
 <meta property="og:site_name" content="Zahi的小窝">
-<meta property="og:description" content="left join on 即左连接，把left join左边的表的记录全部找出来，即使右边的表没有记录。 A LEFT JOIN B ON 条件表达式: ON 条件用来决定如何从 B 表中检索数据行。 如果 B 表中没有任何一行数据匹配 ON 的条件,将会额外生成一行所有列为 NULL 的数据。 在匹配阶段 WHERE 子句的条件都不会被使用。仅在匹配阶段完成以后，WHERE 子句条件才会被使用。">
+<meta property="og:description" content="left join on 即左连接，把left join左边的表的记录全部找出来，即使右边的表没有记录。 A LEFT JOIN B ON 条件表达式: ON 条件用来决定如何从 B 表中检索数据行。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-11-25T02:31:29.000Z">
-<meta property="article:modified_time" content="2022-01-17T08:41:21.268Z">
+<meta property="article:modified_time" content="2022-01-18T16:11:26.262Z">
 <meta property="article:author" content="Zahi">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
@@ -168,6 +168,8 @@
         <p>left join on 即左连接，把left join左边的表的记录全部找出来，即使右边的表没有记录。</p>
 <p>A LEFT JOIN B ON 条件表达式:</p>
 <p>ON 条件用来决定如何从 B 表中检索数据行。</p>
+<span id="more"></span>
+
 <p>如果 B 表中没有任何一行数据匹配 ON 的条件,将会额外生成一行所有列为 NULL 的数据。</p>
 <p>在匹配阶段 WHERE 子句的条件都不会被使用。仅在匹配阶段完成以后，WHERE 子句条件才会被使用。它将从匹配阶段产生的数据中检索过滤。</p>
 <p>SELECT * FROM A LEFT JOIN B ON A.ID=B.ID WHERE B.OTHERKEY=XXXX<br>与<br>SELECT * FROM A LEFT JOIN B ON A.ID=B.ID AND B.OTHERKEY=XXXX<br>是不一样的</p>
@@ -435,11 +437,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,6 +1,4 @@
-这是一个搭建在github pages上的博客，博客地址   https://takeshi-tyo.github.io
+这是一个搭建在github pages上的博客，博客地址   https://zahi0.github.io
 
-备用地址   http://nhm41n.coding-pages.com/
-
-本博客使用hexo构建，并采用yilia主题
+本博客使用[Hexo](https://hexo.io/zh-cn/)构建，并采用yilia主题 [litten/hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia)
 

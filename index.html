@@ -142,6 +142,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Hexo版本升级教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/18/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E6%95%99%E7%A8%8B/">Hexo版本升级教程</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/18/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E6%95%99%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2022-01-18T15:29:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在重新搭建Hexo的时候，执行 <code>hexo d</code> 部署出现了以下错误</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object</span><br><span class="line">    at copyFile (node:fs:2774:10)</span><br><span class="line">    at tryCatcher (D:\workspace\hexo\myblog\node_modules\bluebird\js\release\util.js:16:23)</span><br></pre></td></tr></table></figure>
+
+<p>经过一番百度得知是hexo版本与nodejs版本不匹配导致 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/#Node-js-%E7%89%88%E6%9C%AC%E9%99%90%E5%88%B6">Hexo–Node.js 版本限制</a></p>
+        
+          <a class="article-more-a" href="/2022/01/18/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E6%95%99%E7%A8%8B/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/18/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E6%95%99%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Hexo搭建教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -238,15 +317,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p> 在本地推代码到github的时候，要先配置一下ssh</p>
-<h2 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;997798407@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-<p>然后一路回车就行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<p>把key复制好</p>
-<h2 id="在github配置ssh-key"><a href="#在github配置ssh-key" class="headerlink" title="在github配置ssh key"></a>在github配置ssh key</h2><p>进入这个页面: <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
-<p>点击 <strong>new ssh key</strong>,把上面复制的粘贴保存</p>
-<h2 id="设置username和email"><a href="#设置username和email" class="headerlink" title="设置username和email"></a>设置username和email</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;github的username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;注册github的邮箱&quot;</span></span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2022/01/15/github%20ssh%E9%85%8D%E7%BD%AE/#more">more >></a>
+        
       
 
       
@@ -320,19 +393,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p> 场景：在公司开发，一般都是多人协作的情景，git上的分支也有master、ver、dev、Feature_1206_XXX……之类的，假设我把某个Feature分支拉到本地，修改并commit之后，另一个同事已经提交了几个commit并且push到了远程分支，这时我直接push是不行的，要先经过以下几个步骤：</p>
-<p>第一步：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add XXX</span><br><span class="line">git commit -m XXX</span><br><span class="line">#只提交自己的代码，有时候不得已要修改别人的代码，但又不想提交，那就不要add进去</span><br></pre></td></tr></table></figure>
-
-<p>第二步：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash   </span><br><span class="line">#把没有commit的修改保存至堆栈中</span><br></pre></td></tr></table></figure>
-
-<p>第三步：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase</span><br><span class="line">#从远程分支拉取最新的代码，并把你的commit放在最后面</span><br></pre></td></tr></table></figure>
-
-<p>第四步：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br><span class="line">#推送你的代码到远程分支</span><br><span class="line">git stash pop</span><br><span class="line">#将当前stash中的内容弹出，把没有commit的modified文件恢复到工作区</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2019/12/06/git%E5%A4%9A%E4%BA%BA%E5%8D%8F%E4%BD%9C%E6%83%85%E6%99%AF%E4%B8%8B%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/#more">more >></a>
+        
       
 
       
@@ -408,12 +471,9 @@
         <p>left join on 即左连接，把left join左边的表的记录全部找出来，即使右边的表没有记录。</p>
 <p>A LEFT JOIN B ON 条件表达式:</p>
 <p>ON 条件用来决定如何从 B 表中检索数据行。</p>
-<p>如果 B 表中没有任何一行数据匹配 ON 的条件,将会额外生成一行所有列为 NULL 的数据。</p>
-<p>在匹配阶段 WHERE 子句的条件都不会被使用。仅在匹配阶段完成以后，WHERE 子句条件才会被使用。它将从匹配阶段产生的数据中检索过滤。</p>
-<p>SELECT * FROM A LEFT JOIN B ON A.ID=B.ID WHERE B.OTHERKEY=XXXX<br>与<br>SELECT * FROM A LEFT JOIN B ON A.ID=B.ID AND B.OTHERKEY=XXXX<br>是不一样的</p>
-<p>后者相当于（出来的结果一样）<br>SELECT * FROM A LEFT JOIN B ON A.ID=B.ID WHERE B.OTHERKEY=XXXX OR B.OTHERKEY IS NULL</p>
-<p>进行左连接时，就有涉及到主表、辅表，这时主表条件写在WHERE之后，辅表条件写在ON后面！！！</p>
-
+        
+          <a class="article-more-a" href="/2019/11/25/MySQL%E7%9F%A5%E8%AF%86%E7%82%B9%E2%80%94%E2%80%94LEFT-JOIN/#more">more >></a>
+        
       
 
       
@@ -861,85 +921,6 @@
 
 
   
-    <article id="post-Java import单类引入与包引入的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/17/Java%20import%E5%8D%95%E7%B1%BB%E5%BC%95%E5%85%A5%E4%B8%8E%E5%8C%85%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB/">[转载] Java import单类引入与包引入的区别</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/17/Java%20import%E5%8D%95%E7%B1%BB%E5%BC%95%E5%85%A5%E4%B8%8E%E5%8C%85%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2019-10-17T02:39:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>单类型导入（single-type-import），例如import java.io.File；</p>
-<p>　　按需类型导入（type-import-on-demand），例如 import java.io.*；</p>
-<p>　　关于这两种导入类型大家各有所爱，众说纷纭。这里分析一下这两种导入类型的大致工作原理供大家参考。</p>
-<p>　　单类型导入比较好理解，仅仅导入一个public类或者接口。而对于按需类型导入，有人误解为导入一个包下的所有类，其实不然，看名字就知道，他只会按需导入，也就是说它并非导入整个包，而仅仅导入当前类需要使用的类。</p>
-        
-          <a class="article-more-a" href="/2019/10/17/Java%20import%E5%8D%95%E7%B1%BB%E5%BC%95%E5%85%A5%E4%B8%8E%E5%8C%85%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/17/Java%20import%E5%8D%95%E7%B1%BB%E5%BC%95%E5%85%A5%E4%B8%8E%E5%8C%85%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1048,11 +1029,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
