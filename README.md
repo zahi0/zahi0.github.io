@@ -1,8 +1,8 @@
-> 这个分支放的是博客原文件，master分支是Hexo生成的静态页面
+> 此分支放的是博客源文件，master分支是Hexo生成的静态页面
 
 
 
-# 博客搭建教程
+# 搭建过程
 
 
 
@@ -26,13 +26,8 @@ hexo -v #装完检查一下
 
 
 
-3、初始化博客
-
-```shell
-hexo init myblog #名字随便取
-```
-
-初始化完成后，进入myblog文件夹，该目录下有：
+3、克隆本仓库
+克隆完成后，进入文件夹，该目录下有：
 
 - node_modules: 依赖包
 - public：存放生成的静态页面
@@ -43,7 +38,11 @@ hexo init myblog #名字随便取
 
 
 
-4、把本仓库的所有文件复制到myblog文件夹进行替换
+4、cd 到该目录
+
+```shell
+npm install   #（可选）
+```
 
 然后执行以下命令
 
@@ -57,7 +56,7 @@ hexo server #启动服务器
 确认没问题之后，部署博客到Github page上，命令：
 
 ```shell
-npm install hexo-deployer-git --save  #仅第一次部署需要，后续不要执行此命令
+npm install hexo-deployer-git --save  #（可选）仅第一次部署需要，后续不要执行此命令
 hexo d
 ```
 
