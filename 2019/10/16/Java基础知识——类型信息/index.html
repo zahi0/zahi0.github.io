@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/z.png">
+  <link rel="icon" href="/assets/img/z.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zahi">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1、为什么需要RTTIRTTI的含义：在运行时，识别一个对象的类型。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识——类型信息">
+<meta property="og:url" content="https://zahi.tk/2019/10/16/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/index.html">
+<meta property="og:site_name" content="Zahi的小窝">
+<meta property="og:description" content="1、为什么需要RTTIRTTI的含义：在运行时，识别一个对象的类型。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zahi.tk/banner/p11.jpg">
+<meta property="article:published_time" content="2019-10-16T02:16:51.000Z">
+<meta property="article:modified_time" content="2023-03-13T15:48:49.408Z">
+<meta property="article:author" content="Zahi">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zahi.tk/banner/p11.jpg">
+  
+  
+  <title>Java基础知识——类型信息 - Zahi的小窝</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zahi.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"assets/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"GhNo5XoFRtx1v2K1ADamN6AY-gzGzoHsz","app_key":"CFeJJBasnyuPuHYp4FOJQ9X0","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Zahi的小窝" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Zahi的小窝" type="application/rss+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Zahi&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/%E7%95%99%E8%A8%80%E6%9D%BF/">
+                <i class="iconfont icon-note"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                文档
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">
+                    
+                    主题博客
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">
+                    
+                    配置指南
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/icon/">
+                    
+                    图标用法
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://console.leancloud.cn/apps">
+                    
+                    LeanCloud
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/html/heart.html">
+                    
+                    爱心
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/banner/p11.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java基础知识——类型信息">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-10-16 10:16" pubdate>
+        2019-10-16, 10:16:51
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      57 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java基础知识——类型信息</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023-03-13, 23:48:49
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="1、为什么需要RTTI"><a href="#1、为什么需要RTTI" class="headerlink" title="1、为什么需要RTTI"></a>1、为什么需要RTTI</h1><p>RTTI的含义：在运行时，识别一个对象的类型。</p>
+<span id="more"></span>
+
+<h1 id="2、Class对象"><a href="#2、Class对象" class="headerlink" title="2、Class对象"></a>2、Class对象</h1><p>Class对象包含了与类有关的信息，每个类都有一个Class对象。换言之，每当编写并且编译了一个新类，就会产生一个Class对象。为了生成这个对象，使用了jvm中的类加载器。</p>
+<p>所有类都是对其第一次使用时，动态加载到jvm中，当程序创建第一个对类的静态成员的引用时，就会加载这个类，这证明构造器也是类的静态方法，因此，使用new创建类的新对象也会被当做对类静态成员的引用。</p>
+<p>类加载器先检查这个类的Class对象是否已经加载，如尚未加载，默认的类加载器就会根据类名查找.class文件。在这个类的字节码被加载时，它们会接受验证，以确保其没有被破坏，并且不包含不良的Java代码（这是java中用于安全防范目的的措施之一）。</p>
+<p>一旦某个类的Class对象被载入内存，它就被用来创建这个类的所有对象。例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Candy</span></span>&#123;<br>    <span class="hljs-keyword">static</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;Candy&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Gum</span></span>&#123;<br>    <span class="hljs-keyword">static</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;Gum&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cookie</span></span>&#123;<br>    <span class="hljs-keyword">static</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;Cookie&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SweetShop</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;In main&quot;</span>);<br>        <span class="hljs-keyword">new</span> Candy();<br>        System.out.println(<span class="hljs-string">&quot;After create Candy&quot;</span>);<br>        <span class="hljs-keyword">try</span>&#123;<br>            Class.forName(<span class="hljs-string">&quot;Gum&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;Couldn&#x27;t find Gum&quot;</span>);<br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;Aftet Class.forName(\&quot;Gum\&quot;)&quot;</span>);<br>        <span class="hljs-keyword">new</span> Cookie();<br>        System.out.println(<span class="hljs-string">&quot;After create Cookie&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-comment">/* output:</span><br><span class="hljs-comment">In main</span><br><span class="hljs-comment">Candy</span><br><span class="hljs-comment">After create Candy</span><br><span class="hljs-comment">Gum</span><br><span class="hljs-comment">Aftet Class.forName(&quot;Gum&quot;)</span><br><span class="hljs-comment">Cookie</span><br><span class="hljs-comment">After create Cookie</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+<p>从输出结果可以看到，Class对象仅在需要的时候才会加载，static初始化也是在类加载时进行的。</p>
+<p>Class.forName()方法是Class类（所有Class对象都属于Class类）的一个static成员，它是取得Class对象引用的一种方法（这里忽略了返回值），它接受一个类名作为输入。这里对forName的调用是为了它的副作用：如果Gum类还没有被加载就加载它。使用forName的好处是，你不需要为了得到Class对象的引用而创建该类型的对象。但是如果你已经有一个对象，你可以通过getClass方法来获取Class引用，该方法属于Object的一部分。</p>
+<p>Class包含很多有用的方法，下面是其中的一部分：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> test;<br><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">HasBatteries</span></span>&#123;&#125;<br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Waterproof</span></span>&#123;&#125;<br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Shoots</span></span>&#123;&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Toy</span></span>&#123;<br>    Toy()&#123;&#125;<br>    Toy(<span class="hljs-keyword">int</span> i)&#123;&#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FancyToy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Toy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">HasBatteries</span>,<span class="hljs-title">Waterproof</span>,<span class="hljs-title">Shoots</span></span>&#123;<br>    FancyToy()&#123; <span class="hljs-keyword">super</span>(<span class="hljs-number">1</span>); &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TyoTest</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printInfo</span><span class="hljs-params">(Class c)</span></span>&#123;<br>        <span class="hljs-comment">//getName()返回全限定类名（包括包名）， isInterface()判断是否接口</span><br>        System.out.println(<span class="hljs-string">&quot;Class name: &quot;</span> + c.getName() + <span class="hljs-string">&quot; is interface? [&quot;</span> + c.isInterface() + <span class="hljs-string">&quot;]&quot;</span>);<br>        <span class="hljs-comment">//getSimpleName()返回类名</span><br>        System.out.println(<span class="hljs-string">&quot;Simple name: &quot;</span> +c.getSimpleName());<br>        <span class="hljs-comment">//getCanonicalName()返回全限定类名（包括包名，Java SE5中引入）</span><br>        System.out.println(<span class="hljs-string">&quot;Canonical name: &quot;</span> + c.getCanonicalName());<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Class c = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">try</span>&#123;<br>            c = Class.forName(<span class="hljs-string">&quot;test.FancyToy&quot;</span>); <span class="hljs-comment">//必须使用全限定名</span><br>        &#125; <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;Can&#x27;t find FancyToy&quot;</span>);<br>            System.exit(<span class="hljs-number">1</span>);<br>        &#125;<br>        printInfo(c);<br>        <span class="hljs-keyword">for</span> (Class face:c.getInterfaces())&#123; <span class="hljs-comment">//getInterfaces()返回所实现的全部接口的Class对象引用</span><br>            printInfo(face);<br>        &#125;<br>        Class up = c.getSuperclass(); <span class="hljs-comment">//getSuperclass()返回父类的Class对象引用</span><br>        Object obj = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">//newInstance()虚拟构造器，创建一个该类型的对象，该类必须有默认构造器</span><br>            obj = up.newInstance();<br>        &#125; <span class="hljs-keyword">catch</span> (IllegalAccessException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;Can&#x27;t access&quot;</span>);<br>            System.exit(<span class="hljs-number">1</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (InstantiationException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;Can&#x27;t instantiate&quot;</span>);<br>            System.exit(<span class="hljs-number">1</span>);<br>        &#125;<br>        printInfo(obj.getClass());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Java还提供另一种方法来生成对Class对象的引用，即使用<strong>类字面常量</strong>。例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Class c = FancyToy.class<br></code></pre></td></tr></table></figure>
+
+<p>这样做不仅更简单，而且更安全，因为它在编译时就收到检查（因此不需要置于try语句块中）。类字面常量不仅可以应用于普通类，而且可以应用于接口、数组以及基本数据类型。另外，对于基本数据类型的包装类，还有一个标准字段TYPE，TYPE字段是一个引用，指向对应的基本数据类型的Class对象，例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span>.class == Integer.TYPE;	<span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure>
+
+<p>注意！！！当使用.class来创建Class对象的引用时，不会自动地初始化该Class对象（这和forName方法创建Class对象时不同），为了使用类而做的准备实际包含三个步骤：</p>
+<p>（1）加载。这由类加载器执行，该步骤将查找字节码，并从这些字节码创建一个Class对象。</p>
+<p>（2）链接。验证类中的字节码，为静态域分配存储空间，并且如果必须的话，将解析这个类创建的对其他类的所有引用。</p>
+<p>（3）初始化。如果该类具有父类，则对其初始化，执行静态初始化器和静态初始化块。</p>
+<p>初始化被延迟到对静态方法（包括构造器）或者非常数静态域进行首次引用时才执行。例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Initable</span></span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> staticFinal = <span class="hljs-number">47</span>;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> staticFinal2 = ClassInitialization.ran.nextInt(<span class="hljs-number">1000</span>);<br>    <span class="hljs-keyword">static</span> &#123; System.out.println(<span class="hljs-string">&quot;Initializing initable&quot;</span>); &#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Initable2</span></span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> staticNonFinal = <span class="hljs-number">147</span>;<br>    <span class="hljs-keyword">static</span> &#123; System.out.println(<span class="hljs-string">&quot;Initializing initable2&quot;</span>); &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassInitialization</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Random ran = <span class="hljs-keyword">new</span> Random(<span class="hljs-number">47</span>);<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Class initable = Initable.class;<br>        System.out.println(<span class="hljs-string">&quot;After creating Initable ref&quot;</span>);<br>        System.out.println(Initable.staticFinal);<br>        System.out.println(Initable.staticFinal2);<br>        System.out.println(<span class="hljs-string">&quot;===================&quot;</span>);<br>        System.out.println(Initable2.staticNonFinal);<br>    &#125;<br>&#125;<br><span class="hljs-comment">/* output:</span><br><span class="hljs-comment">After creating Initable ref</span><br><span class="hljs-comment">47</span><br><span class="hljs-comment">Initializing initable</span><br><span class="hljs-comment">258</span><br><span class="hljs-comment">===================</span><br><span class="hljs-comment">Initializing initable2</span><br><span class="hljs-comment">147</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+<p>如果一个static final值是“编译期常量”，就像Initable.staticFinal那样，那么这个值不需要对Initable类进行初始化就可以访问。但是，仅仅将一个域设置为static和final还不足以确保这种行为，例如Initable.staticFinal2的访问就会强制进行类的初始化，因为它不是一个编译期常量。</p>
+<p>如果一个static域不是final的，那么对它访问时，要先进行链接和初始化，就像对Initable2.staticNonFinal的访问中所看到的那样。</p>
+<p>Class&lt;T&gt;  和Class&lt;?&gt;的区别：Class&lt;T&gt;的对象引用只能指向T类的Class对象，而Class&lt;?&gt;没有限制，和Class等价。Class&lt;?&gt;对于Class的好处是它表示你不是因为碰巧或疏忽而使用了一个不同类型的对象（Class引用表示的就是它所指向的对象的确切类型，它可以制造类的实例，一般来说给Class引用赋值后就不要改变它，或者使用Class&lt;T&gt;来进行限制，如果要把引用指向其它类(非原先类的子类)，最好用Class&lt;?&gt;）。</p>
+<h1 id="3、类型转换前先做检查"><a href="#3、类型转换前先做检查" class="headerlink" title="3、类型转换前先做检查"></a>3、类型转换前先做检查</h1><p>RTTI形式包括：</p>
+<p>（1）传统的类型转换，如“(Shape)”，由RTTI保证类型转换的正确性，如果执行了一个错误的类型转换，则抛出一个ClassCastException异常。</p>
+<p>（2）代表对象类型的Class对象。通过查询Class对象可以获取运行时所需的信息。</p>
+<p>（3）关键字instanceof，它返回一个布尔值，告诉我们对象是不是某个特定类型的实例。可以用提问的方式使用它，例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(x <span class="hljs-keyword">instanceof</span> Dog)<br>	((Dog) x).bark();<br></code></pre></td></tr></table></figure>
+
+<p>在将x转型为一个Dog前，先用if语句检查x是否从属于Dog类。</p>
+<p>动态instanceof：class.isInstance(obj)方法提供了一种动态测试对象的途径，即对象obj能否转化为class所指向的类的对象。例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Class c = Pet.class;<br>        Dog dog = <span class="hljs-keyword">new</span> Dog();<br>        System.out.println(c.isInstance(dog));	<span class="hljs-comment">//true</span><br>    &#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pet</span></span>&#123;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>对obj.instanceof(class)，在编译时编译器需要知道类的具体类型</p>
+<p>对class.isInstance(obj)，编译器在运行时才进行类型检查，故可用于反射，泛型中</p>
+<h1 id="4、反射：运行时的类信息"><a href="#4、反射：运行时的类信息" class="headerlink" title="4、反射：运行时的类信息"></a>4、反射：运行时的类信息</h1><p>Class类与java.lang.reflect类库一起对反射的概念进行了支持，该类库包含了……  //TODO</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/10/17/maven%E7%9A%84settings-xml%E5%92%8Cpom-xml%E9%85%8D%E7%BD%AE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">maven的settings.xml和pom.xml配置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/10/15/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B9%8B%E8%B4%AA%E5%A9%AA%E5%9E%8B%E3%80%81%E5%8B%89%E5%BC%BA%E5%9E%8B%E5%92%8C%E5%8D%A0%E6%9C%89%E5%9E%8B/">
+                        <span class="hidden-mobile">[转载] Java正则表达式之贪婪型、勉强型和占有型</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"GhNo5XoFRtx1v2K1ADamN6AY-gzGzoHsz","appKey":"CFeJJBasnyuPuHYp4FOJQ9X0","path":"window.location.pathname","placeholder":"畅所欲言","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> © 2022 <a href="https://github.com/zahi0" target="_blank" rel="nofollow noopener"><span>Zahi</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxingxing.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/dianjichuzi.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start -->
+  <div id="aplayer"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/aplayer.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

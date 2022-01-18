@@ -1,0 +1,800 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/z.png">
+  <link rel="icon" href="/assets/img/z.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zahi">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1 用引用操作对象Java使用引用（reference）来操作对象，就像使用遥控器（引用）来操作电视机（对象）。例如： 1String  s &#x3D; &quot;abc&quot;;  s是引用，“abc ”是对象。当然引用也可以独立存在，不一定需要一个对象与之关联。如： 1String s；  如果这时向s发送一个消息，就会返回一个运行时错误。因为s实际没有与对象关联。因此，一种安全的做法是创建一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识--一切都是对象">
+<meta property="og:url" content="https://zahi.tk/2019/09/16/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="Zahi的小窝">
+<meta property="og:description" content="1 用引用操作对象Java使用引用（reference）来操作对象，就像使用遥控器（引用）来操作电视机（对象）。例如： 1String  s &#x3D; &quot;abc&quot;;  s是引用，“abc ”是对象。当然引用也可以独立存在，不一定需要一个对象与之关联。如： 1String s；  如果这时向s发送一个消息，就会返回一个运行时错误。因为s实际没有与对象关联。因此，一种安全的做法是创建一个">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zahi.tk/banner/p6.jpg">
+<meta property="article:published_time" content="2019-09-16T07:54:36.000Z">
+<meta property="article:modified_time" content="2023-03-13T15:48:49.416Z">
+<meta property="article:author" content="Zahi">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zahi.tk/banner/p6.jpg">
+  
+  
+  <title>Java基础知识--一切都是对象 - Zahi的小窝</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zahi.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"assets/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"GhNo5XoFRtx1v2K1ADamN6AY-gzGzoHsz","app_key":"CFeJJBasnyuPuHYp4FOJQ9X0","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Zahi的小窝" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Zahi的小窝" type="application/rss+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Zahi&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/%E7%95%99%E8%A8%80%E6%9D%BF/">
+                <i class="iconfont icon-note"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                文档
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">
+                    
+                    主题博客
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">
+                    
+                    配置指南
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/icon/">
+                    
+                    图标用法
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://console.leancloud.cn/apps">
+                    
+                    LeanCloud
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/html/heart.html">
+                    
+                    爱心
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/banner/p6.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java基础知识--一切都是对象">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-09-16 15:54" pubdate>
+        2019-09-16, 15:54:36
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      31 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java基础知识--一切都是对象</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023-03-13, 23:48:49
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="1-用引用操作对象"><a href="#1-用引用操作对象" class="headerlink" title="1 用引用操作对象"></a>1 用引用操作对象</h2><p>Java使用<strong>引用（reference）</strong>来操作对象，就像使用遥控器（引用）来操作电视机（对象）。例如：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">String  s</span> = <span class="hljs-string">&quot;abc&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>s是引用，“abc ”是对象。当然引用也可以独立存在，不一定需要一个对象与之关联。如：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">String</span> s；<br></code></pre></td></tr></table></figure>
+
+<p>如果这时向s发送一个消息，就会返回一个运行时错误。因为s实际没有与对象关联。因此，一种安全的做法是创建一个引用的同时进行初始化。</p>
+<span id="more"></span>
+<h2 id="2-必须由你创建所有对象"><a href="#2-必须由你创建所有对象" class="headerlink" title="2 必须由你创建所有对象"></a>2 必须由你创建所有对象</h2><p>一旦创建一个引用，就希望它能与一个新的对象相关联，通常用new操作符实现这一目的，new关键字的意思是“给我一个新对象”。例如</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">String</span> s = <span class="hljs-keyword">new</span> <span class="hljs-built_in"><span class="hljs-keyword">String</span></span>(<span class="hljs-string">&quot;abc&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>对象的引用存储在堆栈里，而对象存储在堆里。</p>
+<p>基本类型也是存储在堆栈里的。</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>大小</th>
+<th>包装器类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>-</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16 bits</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8 bits</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16 bits</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32 bits</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64 bits</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32 bits</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64 bits</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>void</td>
+<td>-</td>
+<td>Void</td>
+</tr>
+</tbody></table>
+<p>Java提供2个高精度计算的类：BigInteger和BigDecimal，它们大体上属于包装类，但没有对应的基本类型。BigInteger支持任意精度的整数，BigDecimal支持任意精度的定点数。</p>
+<h2 id="3-永远不要销毁对象"><a href="#3-永远不要销毁对象" class="headerlink" title="3 永远不要销毁对象"></a>3 永远不要销毁对象</h2><p>大多数过程型语言都有作用域（scope）的概念，作用域决定了在其内定义的变量名的可见性与生命周期，在C、C++、Java中，作用域由花括号的位置决定。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//在作用域1内只有x有效，在作用域2内x和y都有效，y只在作用域2内有效</span><br>&#123; <span class="hljs-comment">//start of scope 1</span><br>	<span class="hljs-keyword">int</span> x = <span class="hljs-number">12</span>;<br>	&#123; <span class="hljs-comment">//start of scope 2</span><br>		<span class="hljs-keyword">int</span> y = <span class="hljs-number">13</span>;<br>	&#125;  <span class="hljs-comment">//end of scope 2</span><br>&#125; <span class="hljs-comment">//end of scope 1</span><br></code></pre></td></tr></table></figure>
+
+<p>尽管以下代码在C和C++中是合法的，但在Java中却不能这样写。因为C和C++允许将一个较大作用域的变量隐藏起来，而Java不允许。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">&#123;<br>	<span class="hljs-keyword">int</span> x = <span class="hljs-number">12</span>;<br>	&#123;<br>		<span class="hljs-keyword">int</span> x = <span class="hljs-number">13</span>;  <span class="hljs-comment">//Illegal</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Java对象不具备和基本类型一样的生命周期。当用new创建一个对象时，它可以存活于作用域之外。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">&#123;<br>	String s = <span class="hljs-keyword">new</span> String(<span class="hljs-string">&quot;abc&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>引用s在作用域终点就消失了，然而s指向的对象仍然占据内存空间，直到该对象被垃圾回收器回收掉。</p>
+<h2 id="4-创建新的数据类型：类"><a href="#4-创建新的数据类型：类" class="headerlink" title="4 创建新的数据类型：类"></a>4 创建新的数据类型：类</h2><p>Java使用<strong>class</strong>关键字定义一个新的类型，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ATypeName</span></span>&#123; <br>	<span class="hljs-comment">// class body goes here</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>类里可以有两种类型的元素：<strong>字段</strong>（数据成员）和<strong>方法</strong>（成员函数）。</p>
+<p>字段可以是任何类型的对象或者基本类型。</p>
+<p>每个对象都有用来存储其字段的空间，普通字段不能在对象间共享（用static定义的字段可以）。</p>
+<p>若类的某个成员是基本类型，即使没有进行初始化，java也会确保它获得一个默认值。</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>char</td>
+<td>‘\u0000’  (null)</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>(byte) 0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>(short) 0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>float</td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>0.0d</td>
+</tr>
+</tbody></table>
+<p>这些默认值对你的程序来说可能是不正确的，最好明确的对变量进行初始化。</p>
+<p>然而上述初始化不适用于局部变量（即并非某个类的字段）。比如在某个方法中定义 int i，那么变量i可能是任意值，而不会初始化为0。</p>
+<h2 id="5-方法、参数和返回值"><a href="#5-方法、参数和返回值" class="headerlink" title="5 方法、参数和返回值"></a>5 方法、参数和返回值</h2><p>Java的方法决定一个对象能接收什么样的消息，方法的基本组成部分包括：名称、参数、返回值和方法体，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">ReturnType <span class="hljs-title">methodName</span><span class="hljs-params">(<span class="hljs-comment">/* Argument list */</span>)</span></span>&#123;<br>	<span class="hljs-comment">// method body</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>方法的返回值的类型必须和返回类型（ReturnType）一致。参数列表给出了要传给方法的信息的类型和名称。参数列表所传递的实际是对象的引用（基本类型除外）。方法名和参数列表唯一地标识某个方法。</p>
+<h2 id="6-构建一个Java程序"><a href="#6-构建一个Java程序" class="headerlink" title="6 构建一个Java程序"></a>6 构建一个Java程序</h2><p>名字空间，即包名，包名加类名是一个类的唯一标识符，以防止和其他相同名字的类发生冲突。</p>
+<p>使用<strong>import</strong>关键字来导入你想要的类。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.ArrayList;  <span class="hljs-comment">//单类型导入</span><br><span class="hljs-keyword">import</span> java.util.*;  <span class="hljs-comment">//按需类型导入</span><br></code></pre></td></tr></table></figure>
+
+<p>单类型导入与按需类型导入的区别请看另一篇博文<a href="/2019/09/17/Java%20import%E5%8D%95%E7%B1%BB%E5%BC%95%E5%85%A5%E4%B8%8E%E5%8C%85%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB/">《Java import单类引入与包引入的区别》</a>,实际编程中更推荐使用单类型导入。</p>
+<p><strong>static</strong>关键字</p>
+<p>当声明一个事物是static时，就意味着这个域或者方法不会与包含它的那个类的任何对象实例关联在一起，即可以直接通过一个类来访问它的static域和static方法（当然也可以通过对象访问），例如:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> x = <span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-comment">// 以下两种方法访问静态的x都是可以的</span><br><span class="hljs-keyword">int</span> i = A.x;<br>A a = <span class="hljs-keyword">new</span> A();<br><span class="hljs-keyword">int</span> j = a.x;<br></code></pre></td></tr></table></figure>
+
+<h2 id="7-你的第一个Java程序"><a href="#7-你的第一个Java程序" class="headerlink" title="7 你的第一个Java程序"></a>7 你的第一个Java程序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span></span>&#123;<br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(Strng[] args)</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>java.lang这个类库是默认导入到每个java文件中的。System类就是这个类库里的，所以使用它不需要导入，out是System的一个静态对象，所以可以直接通过类名引用。</p>
+<p>一个java文件可以包含一个或多个类，但必须有一个类的类名和文件名相同。</p>
+<p>main方法是程序的入口，但并不是每个类都有main方法。main方法的参数args是一个字符串数组，作用是从命令行接收参数，它是必须的，即使在很多时候都没有用到。</p>
+<h2 id="8-注释和嵌入式文档"><a href="#8-注释和嵌入式文档" class="headerlink" title="8 注释和嵌入式文档"></a>8 注释和嵌入式文档</h2><p>Java有两种注释风格：多行注释与单行注释。</p>
+<p>多行注释如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* This is a comment that</span><br><span class="hljs-comment">  continues across lines */</span><br></code></pre></td></tr></table></figure>
+
+<p>实际很多人习惯这样写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* This is a comment that</span><br><span class="hljs-comment"> * continues across lines</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>
+
+<p>单行注释如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// this is a one-line comment</span><br></code></pre></td></tr></table></figure>
+
+<p>javadoc是一个注释提取工具，它能把代码里的注释提取出来单独形成一个文档（实际输出的是一个html文件）。</p>
+<p>javadoc命令只能在 “ /** ” 注释中出现，结束于 “ */ ” 。使用javadoc的方式主要有两种：嵌入html，或使用“文档标签”（以@开头的命令）。</p>
+<p>javadoc只能为public和protected成员进行文档注释。</p>
+<p>javadoc的具体使用可以看这篇文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/vbirdbest/article/details/80296136">https://blog.csdn.net/vbirdbest/article/details/80296136</a></p>
+<h2 id="9-编码风格"><a href="#9-编码风格" class="headerlink" title="9 编码风格"></a>9 编码风格</h2><p>使用驼峰风格，类名每个单词首字母大写，其他内容（变量，方法名，对象引用）第一个单词首字母小写，例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllTheColorOfTheRainbow</span></span>&#123;<br>	<span class="hljs-keyword">int</span> anIntegerRepresentingColors;<br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeTheHueOfTheColor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> newHue)</span></span>&#123;<br>		<span class="hljs-comment">// ...</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/09/17/Java%20import%E5%8D%95%E7%B1%BB%E5%BC%95%E5%85%A5%E4%B8%8E%E5%8C%85%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[转载] Java import单类引入与包引入的区别</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/09/15/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA/">
+                        <span class="hidden-mobile">Java基础知识——对象导论</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"GhNo5XoFRtx1v2K1ADamN6AY-gzGzoHsz","appKey":"CFeJJBasnyuPuHYp4FOJQ9X0","path":"window.location.pathname","placeholder":"畅所欲言","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> © 2022 <a href="https://github.com/zahi0" target="_blank" rel="nofollow noopener"><span>Zahi</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxingxing.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/dianjichuzi.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start -->
+  <div id="aplayer"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/aplayer.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

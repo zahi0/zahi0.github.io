@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Zahi的小窝</title>
+    <link>https://zahi.tk/</link>
+    
+    <image>
+      <url>https://zahi.tk/icon.png</url>
+      <title>Zahi的小窝</title>
+      <link>https://zahi.tk/</link>
+    </image>
+    
+    <atom:link href="https://zahi.tk/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Mon, 13 Mar 2023 15:48:51 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>JAVA8新特性:接口也可以写实现方法</title>
+      <link>https://zahi.tk/2022/06/02/JAVA8%E6%96%B0%E7%89%B9%E6%80%A7-%E6%8E%A5%E5%8F%A3%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%86%99%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
+      <guid>https://zahi.tk/2022/06/02/JAVA8%E6%96%B0%E7%89%B9%E6%80%A7-%E6%8E%A5%E5%8F%A3%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%86%99%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Thu, 02 Jun 2022 08:40:17 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;在日常开发中可能很多人对 &lt;strong&gt;JAVA8&lt;/strong&gt;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</category>
+      
+      
+      <comments>https://zahi.tk/2022/06/02/JAVA8%E6%96%B0%E7%89%B9%E6%80%A7-%E6%8E%A5%E5%8F%A3%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%86%99%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Java List排序的几种实现</title>
+      <link>https://zahi.tk/2022/06/02/Java-List%E6%8E%92%E5%BA%8F%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/</link>
+      <guid>https://zahi.tk/2022/06/02/Java-List%E6%8E%92%E5%BA%8F%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/</guid>
+      <pubDate>Thu, 02 Jun 2022 08:09:24 GMT</pubDate>
+      
+      <description>&lt;p&gt;排序对象类&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</category>
+      
+      <category domain="https://zahi.tk/tags/%E6%8E%92%E5%BA%8F/">排序</category>
+      
+      
+      <comments>https://zahi.tk/2022/06/02/Java-List%E6%8E%92%E5%BA%8F%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Git使用HTTPS连接远程仓库时修改账号密码的方法</title>
+      <link>https://zahi.tk/2022/05/17/Git%E4%BD%BF%E7%94%A8HTTPS%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%97%B6%E4%BF%AE%E6%94%B9%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <guid>https://zahi.tk/2022/05/17/Git%E4%BD%BF%E7%94%A8HTTPS%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%97%B6%E4%BF%AE%E6%94%B9%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Mon, 16 May 2022 16:31:51 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、前言&quot;&gt;&lt;a href=&quot;#0、前言&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Git/">Git</category>
+      
+      
+      <category domain="https://zahi.tk/tags/git/">git</category>
+      
+      
+      <comments>https://zahi.tk/2022/05/17/Git%E4%BD%BF%E7%94%A8HTTPS%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%97%B6%E4%BF%AE%E6%94%B9%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>在宝塔面板搭建自己的邮件服务器</title>
+      <link>https://zahi.tk/2022/04/04/%E5%9C%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <guid>https://zahi.tk/2022/04/04/%E5%9C%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <pubDate>Mon, 04 Apr 2022 09:28:31 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、前言&quot;&gt;&lt;a href=&quot;#0、前言&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</category>
+      
+      
+      <category domain="https://zahi.tk/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</category>
+      
+      <category domain="https://zahi.tk/tags/%E9%82%AE%E4%BB%B6/">邮件</category>
+      
+      <category domain="https://zahi.tk/tags/%E5%AE%9D%E5%A1%94/">宝塔</category>
+      
+      
+      <comments>https://zahi.tk/2022/04/04/%E5%9C%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Java:字节流和字符流（输入流和输出流）</title>
+      <link>https://zahi.tk/2022/04/02/Java-%E5%AD%97%E8%8A%82%E6%B5%81%E5%92%8C%E5%AD%97%E7%AC%A6%E6%B5%81%EF%BC%88%E8%BE%93%E5%85%A5%E6%B5%81%E5%92%8C%E8%BE%93%E5%87%BA%E6%B5%81%EF%BC%89/</link>
+      <guid>https://zahi.tk/2022/04/02/Java-%E5%AD%97%E8%8A%82%E6%B5%81%E5%92%8C%E5%AD%97%E7%AC%A6%E6%B5%81%EF%BC%88%E8%BE%93%E5%85%A5%E6%B5%81%E5%92%8C%E8%BE%93%E5%87%BA%E6%B5%81%EF%BC%89/</guid>
+      <pubDate>Sat, 02 Apr 2022 07:29:37 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;1、什么是流&quot;&gt;&lt;a href=&quot;#1、什么是流&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/%E5%AD%97%E8%8A%82%E6%B5%81/">字节流</category>
+      
+      <category domain="https://zahi.tk/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/">字符流</category>
+      
+      <category domain="https://zahi.tk/tags/%E8%BE%93%E5%85%A5%E6%B5%81/">输入流</category>
+      
+      <category domain="https://zahi.tk/tags/%E8%BE%93%E5%87%BA%E6%B5%81/">输出流</category>
+      
+      <category domain="https://zahi.tk/tags/IO/">IO</category>
+      
+      
+      <comments>https://zahi.tk/2022/04/02/Java-%E5%AD%97%E8%8A%82%E6%B5%81%E5%92%8C%E5%AD%97%E7%AC%A6%E6%B5%81%EF%BC%88%E8%BE%93%E5%85%A5%E6%B5%81%E5%92%8C%E8%BE%93%E5%87%BA%E6%B5%81%EF%BC%89/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>三步搞定Springboot项目发送邮件</title>
+      <link>https://zahi.tk/2022/03/31/%E4%B8%89%E6%AD%A5%E6%90%9E%E5%AE%9ASpringboot%E9%A1%B9%E7%9B%AE%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
+      <guid>https://zahi.tk/2022/03/31/%E4%B8%89%E6%AD%A5%E6%90%9E%E5%AE%9ASpringboot%E9%A1%B9%E7%9B%AE%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
+      <pubDate>Thu, 31 Mar 2022 15:38:53 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;1、添加依赖&quot;&gt;&lt;a href=&quot;#1、添加依赖&quot; class=&quot;headerlink&quot; title=&quot;1、添加依赖&quot;&gt;&lt;/a&gt;1、添加依赖&lt;/h1&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Springboot/">Springboot</category>
+      
+      <category domain="https://zahi.tk/tags/%E9%82%AE%E4%BB%B6/">邮件</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/31/%E4%B8%89%E6%AD%A5%E6%90%9E%E5%AE%9ASpringboot%E9%A1%B9%E7%9B%AE%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Nginx解决跨域(CORS)问题</title>
+      <link>https://zahi.tk/2022/03/30/Nginx%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F-CORS-%E9%97%AE%E9%A2%98/</link>
+      <guid>https://zahi.tk/2022/03/30/Nginx%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F-CORS-%E9%97%AE%E9%A2%98/</guid>
+      <pubDate>Wed, 30 Mar 2022 04:54:55 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、问题出现&quot;&gt;&lt;a href=&quot;#0、问题出现&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/%E5%89%8D%E7%AB%AF/">前端</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Nginx/">Nginx</category>
+      
+      <category domain="https://zahi.tk/tags/%E8%B7%A8%E5%9F%9F/">跨域</category>
+      
+      <category domain="https://zahi.tk/tags/CORS/">CORS</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/30/Nginx%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F-CORS-%E9%97%AE%E9%A2%98/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Amis框架快速上手：使用Json配置生成前端页面</title>
+      <link>https://zahi.tk/2022/03/29/Amis%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%EF%BC%9A%E4%BD%BF%E7%94%A8Json%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/</link>
+      <guid>https://zahi.tk/2022/03/29/Amis%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%EF%BC%9A%E4%BD%BF%E7%94%A8Json%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/</guid>
+      <pubDate>Tue, 29 Mar 2022 13:05:23 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、前言&quot;&gt;&lt;a href=&quot;#0、前言&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/%E5%89%8D%E7%AB%AF/">前端</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Amis/">Amis</category>
+      
+      <category domain="https://zahi.tk/tags/%E5%89%8D%E7%AB%AF/">前端</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/29/Amis%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%EF%BC%9A%E4%BD%BF%E7%94%A8Json%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>纯ipv6服务器建站</title>
+      <link>https://zahi.tk/2022/03/25/%E7%BA%AFipv6%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BB%BA%E7%AB%99/</link>
+      <guid>https://zahi.tk/2022/03/25/%E7%BA%AFipv6%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BB%BA%E7%AB%99/</guid>
+      <pubDate>Thu, 24 Mar 2022 17:46:45 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、前言&quot;&gt;&lt;a href=&quot;#0、前言&quot; class=&quot;headerlink&quot; title=&quot;0、前言&quot;&gt;&lt;/a&gt;0、前言&lt;/h1&gt;&lt;p&gt;前段时间搞了个&lt;a</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</category>
+      
+      
+      <category domain="https://zahi.tk/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</category>
+      
+      <category domain="https://zahi.tk/tags/ipv6/">ipv6</category>
+      
+      <category domain="https://zahi.tk/tags/Cloudflare/">Cloudflare</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/25/%E7%BA%AFipv6%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BB%BA%E7%AB%99/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用Charles转发网络请求到自己的应用</title>
+      <link>https://zahi.tk/2022/03/24/%E4%BD%BF%E7%94%A8Charles%E8%BD%AC%E5%8F%91%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <guid>https://zahi.tk/2022/03/24/%E4%BD%BF%E7%94%A8Charles%E8%BD%AC%E5%8F%91%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <pubDate>Thu, 24 Mar 2022 11:44:25 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、前言&quot;&gt;&lt;a href=&quot;#0、前言&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/%E5%B7%A5%E5%85%B7/">工具</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Charles/">Charles</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/24/%E4%BD%BF%E7%94%A8Charles%E8%BD%AC%E5%8F%91%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BA%94%E7%94%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Jenkins关闭/重启及常见问题</title>
+      <link>https://zahi.tk/2022/03/08/Jenkins%E5%85%B3%E9%97%AD-%E9%87%8D%E5%90%AF%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <guid>https://zahi.tk/2022/03/08/Jenkins%E5%85%B3%E9%97%AD-%E9%87%8D%E5%90%AF%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <pubDate>Tue, 08 Mar 2022 06:15:05 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;1、启动-Jenkins&quot;&gt;&lt;a href=&quot;#1、启动-Jenkins&quot; class=&quot;headerlink&quot; title=&quot;1、启动 Jenkins&quot;&gt;&lt;/a&gt;1、启动 Jenkins&lt;/h1&gt;&lt;p&gt;一般在启动的时候指定它的端口号&lt;/p&gt;
+&lt;figure</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Jenkins/">Jenkins</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/08/Jenkins%E5%85%B3%E9%97%AD-%E9%87%8D%E5%90%AF%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Springboot集成分布式定时任务调度平台xxl-job</title>
+      <link>https://zahi.tk/2022/03/08/Springboot%E9%9B%86%E6%88%90%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%B9%B3%E5%8F%B0xxl-job/</link>
+      <guid>https://zahi.tk/2022/03/08/Springboot%E9%9B%86%E6%88%90%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%B9%B3%E5%8F%B0xxl-job/</guid>
+      <pubDate>Mon, 07 Mar 2022 18:38:09 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、前言&quot;&gt;&lt;a href=&quot;#0、前言&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Springboot/">Springboot</category>
+      
+      <category domain="https://zahi.tk/tags/xxl-job/">xxl-job</category>
+      
+      <category domain="https://zahi.tk/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">定时任务</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/08/Springboot%E9%9B%86%E6%88%90%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%B9%B3%E5%8F%B0xxl-job/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Springboot整合mybatis</title>
+      <link>https://zahi.tk/2022/03/06/Springboot%E6%95%B4%E5%90%88mybatis/</link>
+      <guid>https://zahi.tk/2022/03/06/Springboot%E6%95%B4%E5%90%88mybatis/</guid>
+      <pubDate>Sun, 06 Mar 2022 08:49:56 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;继上篇 &lt;a href=&quot;/2019/10/21/Springboot-Druid%E9%85%8D%E7%BD%AE/&quot;&gt;Springboot整合Druid&lt;/a&gt;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Springboot/">Springboot</category>
+      
+      <category domain="https://zahi.tk/tags/mybatis/">mybatis</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/06/Springboot%E6%95%B4%E5%90%88mybatis/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>自定义spring项目启动banner</title>
+      <link>https://zahi.tk/2022/03/05/%E8%87%AA%E5%AE%9A%E4%B9%89spring%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8banner/</link>
+      <guid>https://zahi.tk/2022/03/05/%E8%87%AA%E5%AE%9A%E4%B9%89spring%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8banner/</guid>
+      <pubDate>Sat, 05 Mar 2022 09:23:51 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;我们在启动Spring项目的时候，经常会看到下面这个玩意&lt;/p&gt;
+&lt;img</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/">花里胡哨</category>
+      
+      <category domain="https://zahi.tk/tags/Springboot/">Springboot</category>
+      
+      <category domain="https://zahi.tk/tags/Spring/">Spring</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/05/%E8%87%AA%E5%AE%9A%E4%B9%89spring%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8banner/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Jenkins安装记录</title>
+      <link>https://zahi.tk/2022/03/03/Jenkins%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <guid>https://zahi.tk/2022/03/03/Jenkins%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <pubDate>Thu, 03 Mar 2022 09:08:27 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;0、简介&quot;&gt;&lt;a href=&quot;#0、简介&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Jenkins/">Jenkins</category>
+      
+      <category domain="https://zahi.tk/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">持续集成</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/03/Jenkins%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>在Springboot项目里整合Redis</title>
+      <link>https://zahi.tk/2022/03/03/%E5%9C%A8Springboot%E9%A1%B9%E7%9B%AE%E9%87%8C%E6%95%B4%E5%90%88Redis/</link>
+      <guid>https://zahi.tk/2022/03/03/%E5%9C%A8Springboot%E9%A1%B9%E7%9B%AE%E9%87%8C%E6%95%B4%E5%90%88Redis/</guid>
+      <pubDate>Thu, 03 Mar 2022 07:29:24 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;基本上现在很多项目都会用到Redis，在项目里整合Redis也是非常简单，只须两步：&lt;/p&gt;
+&lt;h1 id=&quot;1、添加依赖&quot;&gt;&lt;a href=&quot;#1、添加依赖&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Springboot/">Springboot</category>
+      
+      <category domain="https://zahi.tk/tags/Redis/">Redis</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/03/%E5%9C%A8Springboot%E9%A1%B9%E7%9B%AE%E9%87%8C%E6%95%B4%E5%90%88Redis/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>maven常用命令</title>
+      <link>https://zahi.tk/2022/03/03/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <guid>https://zahi.tk/2022/03/03/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <pubDate>Thu, 03 Mar 2022 06:28:43 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;Maven项目构建过程中，主要构建命令有几种：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/03/03/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/image-20220303144102453.png&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Java/">Java</category>
+      
+      
+      <category domain="https://zahi.tk/tags/maven/">maven</category>
+      
+      
+      <comments>https://zahi.tk/2022/03/03/maven%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>云服务器初体验</title>
+      <link>https://zahi.tk/2022/01/24/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
+      <guid>https://zahi.tk/2022/01/24/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
+      <pubDate>Mon, 24 Jan 2022 15:51:03 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;最近突然开始关注起服务器相关的信息，看得心里痒痒的，想着自己买一个服务器来玩玩。然后偶然在网上看到腾讯云的服务器一年才38元，真香！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;就是这个&lt;/strong&gt;&amp;gt;&amp;gt;&amp;gt;  &lt;a</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</category>
+      
+      
+      <category domain="https://zahi.tk/tags/%E9%9A%8F%E7%AC%94/">随笔</category>
+      
+      <category domain="https://zahi.tk/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</category>
+      
+      <category domain="https://zahi.tk/tags/Hexo/">Hexo</category>
+      
+      
+      <comments>https://zahi.tk/2022/01/24/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E4%BD%93%E9%AA%8C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>在Hexo博客上添加Live2d动漫人物</title>
+      <link>https://zahi.tk/2022/01/21/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E6%B7%BB%E5%8A%A0Live2d%E5%8A%A8%E6%BC%AB%E4%BA%BA%E7%89%A9/</link>
+      <guid>https://zahi.tk/2022/01/21/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E6%B7%BB%E5%8A%A0Live2d%E5%8A%A8%E6%BC%AB%E4%BA%BA%E7%89%A9/</guid>
+      <pubDate>Fri, 21 Jan 2022 12:40:52 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;0、前言&quot;&gt;&lt;a href=&quot;#0、前言&quot; class=&quot;headerlink&quot; title=&quot;0、前言&quot;&gt;&lt;/a&gt;0、前言&lt;/h1&gt;&lt;p&gt;想必大家经常能在一些博客的角落看到一个动漫人物（如下图右下角），并且可以用鼠标跟她进行互动，这个东西呢就叫做&lt;strong&gt;Live2d&lt;/strong&gt;，今天就来说一下怎么在Hexo中添加Live2d人物。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Hexo/">Hexo</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Hexo/">Hexo</category>
+      
+      <category domain="https://zahi.tk/tags/Live2d/">Live2d</category>
+      
+      <category domain="https://zahi.tk/tags/%E5%8A%A8%E6%BC%AB/">动漫</category>
+      
+      <category domain="https://zahi.tk/tags/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/">花里胡哨</category>
+      
+      
+      <comments>https://zahi.tk/2022/01/21/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E6%B7%BB%E5%8A%A0Live2d%E5%8A%A8%E6%BC%AB%E4%BA%BA%E7%89%A9/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>申请免费域名并绑定到Github Page</title>
+      <link>https://zahi.tk/2022/01/19/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%88%B0Github-Page/</link>
+      <guid>https://zahi.tk/2022/01/19/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%88%B0Github-Page/</guid>
+      <pubDate>Wed, 19 Jan 2022 08:57:33 GMT</pubDate>
+      
+      <description>&lt;p&gt;在Github Page上搭建完博客之后，发现博客的域名有点长，不是很满意，所以想着搞一个自己的域名。经过一番网上冲浪之后，发现可以在&lt;a href=&quot;http://www.freenom.com/zh/index.html&quot;&gt;Freenom&lt;/a&gt;上白嫖一个免费的顶级域名，freenom 提供了tk、ml、ga、cf、gq这几个后缀的免费域名。下面主要介绍 freenom 免费域名的申请过程及设置域名解析。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://zahi.tk/categories/Hexo/">Hexo</category>
+      
+      
+      <category domain="https://zahi.tk/tags/Hexo/">Hexo</category>
+      
+      <category domain="https://zahi.tk/tags/%E5%9F%9F%E5%90%8D/">域名</category>
+      
+      <category domain="https://zahi.tk/tags/DNS/">DNS</category>
+      
+      <category domain="https://zahi.tk/tags/Freenom/">Freenom</category>
+      
+      
+      <comments>https://zahi.tk/2022/01/19/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%88%B0Github-Page/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
